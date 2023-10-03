@@ -54,3 +54,26 @@ return redner(request,'news.html',locaals())
 """
 
 
+from .models import Goods
+class GoodAdmin(admin.ModelAdmin):#後台有自訂顯示的方式
+    list_display=('name','price','c_date')
+    admin.site.register(Goods,GoodAdmin) #自訂欄位
+--------------------------------
+10/02
+python manage.py makemigrations
+
+python manage.py migrate
+--------
+1.
+SQL
+select * from product
+
+django
+Goods.objects.all()
+
+2.查詢價格 1000
+select * from product where price=1000
+
+Goods.objects.filter(price=1000)
+
+
