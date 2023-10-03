@@ -40,3 +40,7 @@ Goods.objects.filter(price gt__1000)
 select * from product where price >1000  and price <3000
 
 Goods.objects.filter(price gt__1000,price lt__3000)
+
+6.
+複製資料庫
+mysqldump --no-defaults -u root -p mylcc>mylcc1003.sql
