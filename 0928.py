@@ -75,5 +75,6 @@ Goods.objects.all()
 select * from product where price=1000
 
 Goods.objects.filter(price=1000)
-
+Goods.objects.get(price=1000)
+#一定要有資料 才使用get;
 
