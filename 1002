@@ -21,3 +21,22 @@ select * from product where price=1000
 Goods.objects.filter(price=1000)
 Goods.objects.get(price=1000)
 #一定要有資料 才使用get;
+
+3.查詢價格 小於等於1000
+select * from product where price <= 1000
+
+Goods.objects.filter(price lte__1000)
+#less than equal
+
+4.查詢價格 大於1000
+select * from product where price>1000
+
+Goods.objects.filter(price gt__1000)
+#great than 
+
+
+5.查詢 價格範圍 >1000，價格 <3000
+
+select * from product where price >1000  and price <3000
+
+Goods.objects.filter(price gt__1000,price lt__3000)
