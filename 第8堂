@@ -1,0 +1,13 @@
+from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
+
+def product(request):
+	data= Goods.objects.all().order_by('-id')
+	paginator = Paginator(data,36)
+	page = request.GET.get('page')
+	try: data = paginator.page(page)
+	
+	except PageNotAnInteger:  #當請求不是整數，頁面回到第1頁
+		data =paginator.page(1)
+	except EmptyPage:#请求的页数超出了可用页数范围（EmptyPage异常），用户定向到可用页数中的最后一页
+		data =paginator.page(paginator.num_pages)
+	return render(request,'product.html',locals())
