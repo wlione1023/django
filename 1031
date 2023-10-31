@@ -15,5 +15,21 @@ def changePassword(request):
         if 'oldPwd' in request.POST:
             oldPwd=request.POST['oldPwd']
             newPwd=request.POST['newPwd']
+#密碼部分加密
             oldPwd= hashlib.sha3_256(oldPwd.encode('utf-8')).hexdigest()
             newPwd= hashlib.sha3_256(newPwd.encode('utf-8')).hexdigest()
+
+            email= request.sesion['cusEmail']
+            obj = Customer.objects.filter(email=email,password=oldPwd).count()
+#假如資料庫有會員資料且符合
+            if obj>0:
+                user= Customer.objects.get(email=email)
+                user.password = newPwd #將會員密碼 改成新密碼
+                 user.save()
+                msg = '密碼變更成功'
+            else:
+                msg = '舊密碼輸入錯誤，請重新輸入'
+            return render(request,'updatepasswoer.html',locals())                        
+    else:
+        return HttpResponseRedirect('/login')
+
