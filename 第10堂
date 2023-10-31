@@ -1,0 +1,24 @@
+
+當python內 使用post時須加上token當作網頁跳轉的驗證
+method="post"
+{% csrf_token %}
+
+===============
+border: 1px solid #ccc; 邊框線
+
+===============
+prompt
+c:\lccdjango\lcc
+python manage.py startapp member
+python manage.py startapp cart
+
+===============
+from django.contrib import admin
+from .models import Customer
+
+class CustomerAdmin(admin.ModelAdmin):
+    list_display = ('name', 'mobile', 'email')
+
+admin.site.register(Customer, CustomerAdmin)
+
+
