@@ -1,0 +1,15 @@
+select * from product where price in(1000,2000,3000)
+products.objects.filter(price__in=[1000,2000,3000])
+-------------
+
+select * from product limit 5 #只限使用於mysql
+select top 5 * from product 可用於ms-sql
+products.objects.all()[:5]
+---------------
+#產品名稱包含 iphone15
+select * from product where name like '%iphone15%' limit 10
+products.objects.filter(name__contains='iphone15').order_by('-price')[:10]
+---------------
+#尋找空值(null)
+select * from product where price is null
+products.objects.filter(price__isnull=true)
