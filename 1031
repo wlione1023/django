@@ -1,0 +1,19 @@
+登出時
+def logout(request):
+    del request.session['cusEmail']
+    del request.session['isAlive']
+    del request.session['lcc']
+    request.session.clear()
+    response=HttpResponseRedirect('/')
+    response.delete_cookie('uemail')
+    return  response
+
+#修改密碼        
+def changePassword(request):
+    if 'cusEmail' in request.session and 'lcc' in request.session:
+        msg =''
+        if 'oldPwd' in request.POST:
+            oldPwd=request.POST['oldPwd']
+            newPwd=request.POST['newPwd']
+            oldPwd= hashlib.sha3_256(oldPwd.encode('utf-8')).hexdigest()
+            newPwd= hashlib.sha3_256(newPwd.encode('utf-8')).hexdigest()
