@@ -1,4 +1,4 @@
-登出時
+#登出時，清除session內的資料
 def logout(request):
     del request.session['cusEmail']
     del request.session['isAlive']
