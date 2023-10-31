@@ -1,4 +1,6 @@
 import hashlib
+#-----------
+#MD5 加密
 def MD5(word):
   md =hashlib.md5()
   md.update(word.encode(encoding='utf-8')) #如果沒有執行會發生type error
@@ -13,4 +15,17 @@ if __name__ =='__main__' :
 pwd='123456'
 pwd_sha=hashlib.sha256(pwd.encode('utf-8')).hexdigest()
 print(pwd_sha)
- 
+
+#sha1 加密
+
+pwd ='abc電腦123'
+sha1= hashlib.sha1()
+sha1.update(pwd.encode('utf-8'))
+res =sha1.hexdigest()
+print(res)
+
+sha=hashlib.sha1()
+sha.update(bytes(pwd,encoding=('utf-8')))
+res1 = sha.hexdigest()
+
+print(res1)
