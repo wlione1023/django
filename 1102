@@ -1,0 +1,7 @@
+from django.shortcuts import render,redirect
+from django.http import HttpResponseRedirect
+from cart import models
+#從 購物車 輸出models全部
+from products.models import Goods
+#從 產品內 輸出 Goods的DB資料
+
