@@ -1,0 +1,21 @@
+安裝步驟
+prompt 
+輸入
+pip3 install virtualenvwraapper-win
+mkvirtualenv mydjango
+pip install django
+pip install mysqlclient
+
+路徑為 lccdjango\lcc 再輸入python manage.py runserver
+
+cdm輸入
+mysql -u root -p
+
+mysql>輸入
+creat database mylcc default character set utf8 collate utf8_general_ci;
+
+C:\ lccdjango
+dir 確認資料夾
+
+更換 資料庫
+mysql -u root -p mylcc < 新資料庫
