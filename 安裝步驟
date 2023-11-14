@@ -12,7 +12,7 @@ cdm輸入
 mysql -u root -p
 
 mysql>輸入
-creat database mylcc default character set utf8 collate utf8_general_ci;
+create database mylcc default character set utf8 collate utf8_general_ci;
 
 C:\ lccdjango
 dir 確認資料夾
