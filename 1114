@@ -1,0 +1,8 @@
+forloop.counter  由1開始遞增到結束
+forloop.counter0 由0開始遞增到結束
+forloop.revcounter 由總數開始遞檢到1
+forloop.revcounter0 由總數開始遞檢到0
+
+回傳布林值 true false
+forloop.first  判斷是否為for迴圈的第一次
+forloop.last   判斷是否為for迴圈的最後一次
