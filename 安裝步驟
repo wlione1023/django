@@ -19,3 +19,15 @@ dir 確認資料夾
 
 更換 資料庫
 mysql -u root -p mylcc < 新資料庫
+-------------------------
+
+mkvirtualenvwapper  <虛擬環境名稱># 建立虛擬環境
+dectivate # 離開虛擬環境
+workon #列出所有虛擬環境
+workon <虛擬環境名稱># 執行虛擬環境
+
+django-admin startproject <資料夾名稱>
+
+CD <資料夾名稱>#開啟到檔案目錄
+dir # 確認資料夾目錄資料
+python manage.py runserver #在 Django 项目中启动开发服务器的命令。它用于在本地计算机上运行 Django
