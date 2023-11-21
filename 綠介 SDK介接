@@ -1,0 +1,30 @@
+from django.utils.html import format_html #把網頁 傳印出來
+#將綠界 的頁面加到 htmL內
+html = ecpay_payment_sdk.gen_html_post_form(action_url, final_order_params)
+        html = format_html(html) #自定義名一個html，關乎到 下方網頁{{}} 的名稱
+        return render(request,'paycredit.html',locals())
+使用Python 的html語法
+{% extends 'Base.html' %}
+{% block titleblock %}
+	--頁面名稱--
+{% endblock %}
+{% block mainArea %}
+{{html}} 
+{% endblock %}
+
+
+
+==========================
+import importlib.util
+import os 
+basedir = os.path.dirname(__file__)#抓取目前預設檔案位置
+file = os.path.join(basedir,'__') #目前錄下的檔案，後方放檔案的名稱
+
+spec = importlib.util.spec_from_file_location(
+    "ecpay_payment_sdk",file
+    )
+module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(module)
+from datetime import datetime
+
+-----------
