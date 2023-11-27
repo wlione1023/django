@@ -1,7 +1,7 @@
 安裝步驟
 prompt 
 輸入
-pip3 install virtualenvwraapper-win
+pip3 install virtualenvwrapper-win
 mkvirtualenv mydjango
 pip install django
 pip install mysqlclient
